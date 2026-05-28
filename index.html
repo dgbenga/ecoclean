@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoCLean - Eco-friendly cleaning products and services for a healthier home and planet">
+    <meta name="keywords" content="eco-friendly cleaning, green products, sustainable cleaning">
+    <meta name="author" content="EcoCLean Team">
+    
+    <title>EcoCLean - Eco-Friendly Cleaning Products & Services</title>
+    
+    <link rel="shortcut icon" href="images/hero1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sweetalert.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="#home" class="navbar-brand" aria-label="EcoCLean Home">
+                <img src="images/logo.png" alt="EcoCLean Logo">
+                <span class="brand-name ms-2">EcoCLean</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i class="fa fa-bars text-white"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Login
+                    </button>
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#signupModal">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" novalidate>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="your@email.com" required>
+                            <small class="text-danger d-none" id="loginEmailError"></small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                            <small class="text-danger d-none" id="loginPasswordError"></small>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p class="w-100 text-center">Don't have an account? 
+                        <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Create Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm" novalidate>
+                        <div class="mb-3">
+                            <label for="signupName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="signupName" placeholder="Your name" required>
+                            <small class="text-danger d-none" id="signupNameError"></small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="signupEmail" placeholder="your@email.com" required>
+                            <small class="text-danger d-none" id="signupEmailError"></small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" placeholder="At least 8 characters" required>
+                            <small class="text-danger d-none" id="signupPasswordError"></small>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">
+                                I agree to the Terms and Conditions
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100">Sign Up</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p class="w-100 text-center">Already have an account? 
+                        <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center landing-text">
+                    <h1 class="display-4 fw-bold mb-4">Welcome to <span class="text-warning">EcoCLean</span></h1>
+                    <p class="lead mb-4">Discover eco-friendly cleaning solutions that protect your home, family, and planet. Quality products crafted from natural ingredients for a healthier tomorrow.</p>
+                    <div class="cta-buttons">
+                        <a href="#products" class="btn btn-lg btn-warning me-3">Shop Now</a>
+                        <a href="#services" class="btn btn-lg btn-outline-light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h6 class="text-primary fw-bold">SERVICES</h6>
+                    <h2>Our Services</h2>
+                    <p>Comprehensive solutions designed to enhance your home and lifestyle with eco-friendly products and expert guidance.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card card-effect">
+                        <div class="iconbox">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Personalized Consulting</h5>
+                        <p>Expert consultants design custom home office solutions. We assess your setup and provide tailored recommendations for an ergonomic, productive workspace.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card card-effect">
+                        <div class="iconbox">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Wellness Programs</h5>
+                        <p>Participate in wellness programs focused on mental health, stress management, and work-life balance through workshops and webinars.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card card-effect">
+                        <div class="iconbox">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Product Recommendations</h5>
+                        <p>Discover high-quality ergonomic products tailored to your needs. We help you find solutions that support your health and enhance your workspace.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card card-effect">
+                        <div class="iconbox">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Support & Maintenance</h5>
+                        <p>Ongoing support and maintenance for your products. Our team is available to help with setup, optimization, and troubleshooting.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-card card-effect">
+                        <div class="iconbox">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">Eco-Consulting</h5>
+                        <p>Learn how to reduce your environmental footprint with sustainable practices and eco-friendly alternatives for everyday cleaning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h6 class="text-primary fw-bold">TEAM</h6>
+                    <h2>Meet Our Dedicated Team</h2>
+                    <p>Passionate professionals committed to providing eco-friendly solutions and exceptional customer service.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="images/user1.jpg" alt="Emma Johnson - Product Development Lead" class="team-image">
+                        <h5 class="mt-4 mb-1">Emma Johnson</h5>
+                        <p class="text-muted">Product Development Lead</p>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="images/user2.jpg" alt="Liam Brown - Marketing Manager" class="team-image">
+                        <h5 class="mt-4 mb-1">Liam Brown</h5>
+                        <p class="text-muted">Marketing Manager</p>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="images/user3.png" alt="Michael Davis - Customer Support Specialist" class="team-image">
+                        <h5 class="mt-4 mb-1">Michael Davis</h5>
+                        <p class="text-muted">Customer Support Specialist</p>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://pinterest.com" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="images/user4.png" alt="Noah Wilson - Finance Director" class="team-image">
+                        <h5 class="mt-4 mb-1">Noah Wilson</h5>
+                        <p class="text-muted">Finance Director</p>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h6 class="text-primary fw-bold">PRODUCTS</h6>
+                    <h2>Our Eco-Friendly Products</h2>
+                    <p>Crafted with natural ingredients for powerful cleaning that's safe for your family and the environment.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/p1.jpg" alt="EcoCLean All-Purpose Cleaner">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">EcoCLean All-Purpose Cleaner</h5>
+                            <p class="product-text">Powerful all-purpose cleaner with eco-friendly ingredients for every surface.</p>
+                            <div class="product-price">
+                                <span class="price">$12.99</span>
+                            </div>
+                            <button class="btn btn-primary w-100 btn-sm" onclick="showProductDetail('EcoCLean All-Purpose Cleaner', 'A versatile cleaner for every surface. Safe, effective, and eco-friendly.')">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/p2.jpg" alt="EcoCLean Disinfectant">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">EcoCLean Disinfectant</h5>
+                            <p class="product-text">Effective disinfectant with natural ingredients for a safer environment.</p>
+                            <div class="product-price">
+                                <span class="price">$14.99</span>
+                            </div>
+                            <button class="btn btn-primary w-100 btn-sm" onclick="showProductDetail('EcoCLean Disinfectant', 'Natural disinfectant for a cleaner, safer home.')">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/p3.jpg" alt="EcoCLean Glass Cleaner">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">EcoCLean Glass Cleaner</h5>
+                            <p class="product-text">Crystal-clear glass cleaner with eco-friendly formula.</p>
+                            <div class="product-price">
+                                <span class="price">$10.99</span>
+                            </div>
+                            <button class="btn btn-primary w-100 btn-sm" onclick="showProductDetail('EcoCLean Glass Cleaner', 'Achieve streak-free shine on all glass surfaces.')">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/p4.jpg" alt="EcoCLean Floor Cleaner">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">EcoCLean Floor Cleaner</h5>
+                            <p class="product-text">Safe and effective floor cleaner for all types of flooring.</p>
+                            <div class="product-price">
+                                <span class="price">$13.99</span>
+                            </div>
+                            <button class="btn btn-primary w-100 btn-sm" onclick="showProductDetail('EcoCLean Floor Cleaner', 'Deep clean your floors with our eco-friendly formula.')">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/p5.jpg" alt="EcoCLean Bathroom Cleaner">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">EcoCLean Bathroom Cleaner</h5>
+                            <p class="product-text">Tough on grime, gentle on the environment for a sparkling bathroom.</p>
+                            <div class="product-price">
+                                <span class="price">$11.99</span>
+                            </div>
+                            <button class="btn btn-primary w-100 btn-sm" onclick="showProductDetail('EcoCLean Bathroom Cleaner', 'For a fresh and clean bathroom with minimal effort.')">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/p6.jpg" alt="EcoCLean Kitchen Cleaner">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">EcoCLean Kitchen Cleaner</h5>
+                            <p class="product-text">Specially formulated to tackle kitchen grease and grime.</p>
+                            <div class="product-price">
+                                <span class="price">$13.99</span>
+                            </div>
+                            <button class="btn btn-primary w-100 btn-sm" onclick="showProductDetail('EcoCLean Kitchen Cleaner', 'Keep your kitchen spotless with our eco-friendly solution.')">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h6 class="text-primary fw-bold">CONTACT</h6>
+                    <h2>Get In Touch</h2>
+                    <p>Have questions? Our dedicated team is here to help. Contact us today!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-control-lg" id="contactName" 
+                                       placeholder="Your Full Name" required>
+                                <small class="text-danger d-none" id="nameError"></small>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control form-control-lg" id="contactEmail" 
+                                       placeholder="Your Email" required>
+                                <small class="text-danger d-none" id="emailError"></small>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control form-control-lg" id="contactSubject" 
+                                       placeholder="Subject" required>
+                                <small class="text-danger d-none" id="subjectError"></small>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" id="contactMessage" rows="5" 
+                                          placeholder="Your Message" required></textarea>
+                                <small class="text-danger d-none" id="messageError"></small>
+                            </div>
+                            <div class="col-12 d-grid">
+                                <button type="submit" class="btn btn-lg btn-primary">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">About EcoCLean</h2>
+                    <p>At EcoCLean, we're committed to providing environmentally friendly cleaning solutions that are both effective and sustainable.</p>
+                    <p>Founded with a passion for creating a healthier home and planet, our products are crafted using natural ingredients that deliver powerful results without harming the environment.</p>
+                    <p>We believe every cleaning task can be accomplished with eco-friendly products that ensure safety and cleanliness for you and your family.</p>
+                    <p>Our mission is to reduce the ecological footprint of everyday cleaning by offering biodegradable, non-toxic, and chemical-free products.</p>
+                    <p><strong>Join us on our journey towards a more sustainable future.</strong></p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/about.jpg" alt="About EcoCLean" class="about-img img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-lg-3 col-md-6 footer-section">
+                    <div class="footer-logo mb-3">
+                        <img src="images/logo.png" alt="EcoCLean Logo" class="img-fluid">
+                    </div>
+                    <p>EcoCLean is dedicated to sustainable cleaning solutions for a healthier home and planet. Join us in making a positive impact.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-section">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-section">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>123 Greenway Drive, EcoCity, EC 12345</p>
+                    <p><i class="fas fa-phone me-2"></i>(123) 456-7890</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@ecoclean.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-section">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/EcoCLean" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/EcoCLean" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/EcoCLean" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/ecoclean" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-top pt-4">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 EcoCLean. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
